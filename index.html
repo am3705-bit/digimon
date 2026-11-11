@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digimon: Digital World Survival</title>
+</head>
+
+<body>
+
+    <!-- GAME HEADER -->
+    <header>
+        <h1>Digimon: Digital World Survival</h1>
+        <p>Your adventure in the Digital World begins here!</p>
+    </header>
+
+    <!-- MAIN MENU -->
+    <main>
+
+        <section id="main-menu">
+            <h2>Main Menu</h2>
+
+            <button type="button" disabled>New Game</button>
+            <button type="button" disabled>Continue</button>
+            <button type="button" disabled>Settings</button>
+        </section>
+
+        <!-- CHARACTER CREATION -->
+        <section id="character-creation" hidden>
+            <h2>Create Your Character</h2>
+
+            <label for="player-name">Character Name:</label>
+            <input type="text" id="player-name" maxlength="20">
+
+            <h3>Choose Your Appearance</h3>
+            <div id="character-customization">
+                <!-- Character options will go here -->
+            </div>
+        </section>
+
+        <!-- DIGIMON SELECTION -->
+        <section id="digimon-selection" hidden>
+            <h2>Choose Your Partner Digimon</h2>
+
+            <p>Choose your first partner from 12 or more Digimon.</p>
+
+            <div id="starting-digimon-list">
+                <!-- Starting Digimon will go here -->
+            </div>
+        </section>
+
+        <!-- DIGITAL WORLD -->
+        <section id="game-world" hidden>
+            <h2>Digital World</h2>
+
+            <div id="game-container">
+                <p>Your 3D Digital World will appear here.</p>
+            </div>
+
+            <div id="player-status">
+                <h3>Survival Status</h3>
+
+                <p>Health: <span id="health">100</span></p>
+                <p>Hunger: <span id="hunger">100</span></p>
+                <p>Energy: <span id="energy">100</span></p>
+                <p>Rest: <span id="rest">100</span></p>
+            </div>
+        </section>
+
+        <!-- BATTLE SCREEN -->
+        <section id="battle-screen" hidden>
+            <h2>Digimon Battle</h2>
+
+            <div id="battle-arena">
+                <p>Battle arena will appear here.</p>
+            </div>
+
+            <div id="battle-menu">
+                <h3>Battle Actions</h3>
+                <button type="button" disabled>Attack</button>
+                <button type="button" disabled>Special Attack</button>
+                <button type="button" disabled>Defend</button>
+                <button type="button" disabled>Switch Digimon</button>
+                <button type="button" disabled>Use Item</button>
+                <button type="button" disabled>Run Away</button>
+            </div>
+        </section>
+
+        <!-- DIGIMON COLLECTION -->
+        <section id="digimon-collection" hidden>
+            <h2>My Digimon</h2>
+
+            <div id="collection-list">
+                <!-- Collected Digimon will appear here -->
+            </div>
+        </section>
+
+        <!-- INVENTORY -->
+        <section id="inventory" hidden>
+            <h2>Inventory</h2>
+
+            <div id="inventory-items">
+                <!-- Inventory items will appear here -->
+            </div>
+        </section>
+
+        <!-- CRAFTING -->
+        <section id="crafting" hidden>
+            <h2>Crafting</h2>
+
+            <div id="crafting-recipes">
+                <!-- Crafting recipes will appear here -->
+            </div>
+        </section>
+
+        <!-- MISSIONS -->
+        <section id="missions" hidden>
+            <h2>Available Missions</h2>
+
+            <div id="mission-list">
+                <!-- Missions will appear here -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GAME FOOTER -->
+    <footer>
+        <p>Digimon: Digital World Survival</p>
+        <p>Created as a Grade 12 browser game project.</p>
+    </footer>
+
+</body>
+
+</html>
