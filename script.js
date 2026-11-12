@@ -1,11 +1,4 @@
-
-// ==========================================
-// DIGIMON: DIGITAL WORLD SURVIVAL
-// JAVASCRIPT - FIRST VERSION
-// ==========================================
-
-// GAME DATA
-
+import { createProgressionSystem } from "./progression.js";
 
 const digimonChoices = [
     "Agumon",
@@ -654,7 +647,6 @@ function summonDigitalReaper() {
 
     showScreen("digital-reaper");
 }
-
 document.getElementById("dismiss-reaper").addEventListener("click", () => {
     showScreen(previousScreen);
 });
@@ -662,6 +654,4 @@ document.getElementById("dismiss-reaper").addEventListener("click", () => {
 // Initial setup
 updateChestButtons();
 updateCheatMenu();
-
 console.log("Chest System, Cheat System, and Digital Reaper loaded!");
-
