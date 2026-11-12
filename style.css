@@ -283,3 +283,161 @@ footer {
     box-shadow: 0 0 20px #ff0000;
     transform: scale(1.05);
 }
+
+/* =================================
+   CRAFTING WORKSHOP
+================================= */
+
+#crafting {
+    padding: 25px;
+    border: 2px solid #35d9ff;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #101d38, #20204a);
+    box-shadow: 0 0 15px rgba(53, 217, 255, 0.2);
+}
+
+#crafting h2 {
+    color: #35d9ff;
+    text-align: center;
+}
+
+#crafting-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+#crafting-categories button {
+    padding: 12px 18px;
+    border: 1px solid #35d9ff;
+    border-radius: 8px;
+    background: #172d50;
+    color: white;
+    cursor: pointer;
+}
+
+#crafting-categories button:hover {
+    background: #176b91;
+    box-shadow: 0 0 10px #35d9ff;
+}
+
+#crafting-recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#crafting-result {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #35d9ff;
+    border-radius: 10px;
+    background: #101a30;
+    color: white;
+}
+
+
+/* =================================
+   BUILDING WORKSHOP
+================================= */
+
+#building {
+    padding: 25px;
+    border: 2px solid #e3a64d;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #302319, #493323);
+    box-shadow: 0 0 15px rgba(227, 166, 77, 0.2);
+}
+
+#building h2 {
+    color: #ffc66e;
+    text-align: center;
+}
+
+#building-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+#building-blocks button {
+    min-height: 55px;
+    padding: 12px;
+    border: 1px solid #e3a64d;
+    border-radius: 8px;
+    background: #624326;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#building-blocks button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+#building-blocks button:not(:disabled):hover {
+    background: #95612b;
+    box-shadow: 0 0 10px #ffc66e;
+}
+
+#building-area {
+    min-height: 250px;
+    padding: 20px;
+    border: 2px dashed #ffc66e;
+    border-radius: 12px;
+    background: #241b16;
+    color: white;
+    text-align: center;
+}
+
+
+/* =================================
+   GAME NAVIGATION
+================================= */
+
+#game-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+#game-navigation button {
+    padding: 12px 18px;
+    border: 1px solid #35d9ff;
+    border-radius: 8px;
+    background: #172d50;
+    color: white;
+    cursor: pointer;
+}
+
+#game-navigation button:hover {
+    background: #176b91;
+}
+
+
+/* =================================
+   MOBILE WORKSHOP LAYOUT
+================================= */
+
+@media (max-width: 600px) {
+    #crafting,
+    #building {
+        padding: 15px;
+    }
+
+    #crafting-categories button,
+    #building-blocks button {
+        width: 100%;
+    }
+
+    #game-navigation button {
+        width: 100%;
+    }
+}
