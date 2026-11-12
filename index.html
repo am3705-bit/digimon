@@ -3,18 +3,21 @@
 <html lang="en">
 
 <head>
-    
-<script type="importmap">
-{
-    "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
-    }
-}
-</script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Digimon: Digital World Survival</title>
+
+    <!-- THREE.JS IMPORT -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -44,6 +47,7 @@
             <input type="text" id="player-name" maxlength="20">
 
             <h3>Choose Your Appearance</h3>
+
             <div id="character-customization">
                 <!-- Character options will go here -->
             </div>
@@ -68,6 +72,7 @@
                 <p>Your 3D Digital World will appear here.</p>
             </div>
 
+            <!-- PLAYER SURVIVAL STATUS -->
             <div id="player-status">
                 <h3>Survival Status</h3>
 
@@ -75,6 +80,27 @@
                 <p>Hunger: <span id="hunger">100</span></p>
                 <p>Energy: <span id="energy">100</span></p>
                 <p>Rest: <span id="rest">100</span></p>
+            </div>
+
+            <!-- GAME NAVIGATION BUTTONS -->
+            <div id="game-navigation">
+
+                <button type="button" id="open-crafting">
+                    Open Crafting Workshop
+                </button>
+
+                <button type="button" id="open-building">
+                    Open Building Workshop
+                </button>
+
+                <button type="button" id="open-chests">
+                    Open Treasure Chests
+                </button>
+
+                <button type="button" id="open-cheats">
+                    Open Cheat Terminal
+                </button>
+
             </div>
         </section>
 
@@ -88,6 +114,7 @@
 
             <div id="battle-menu">
                 <h3>Battle Actions</h3>
+
                 <button type="button" disabled>Attack</button>
                 <button type="button" disabled>Special Attack</button>
                 <button type="button" disabled>Defend</button>
@@ -115,82 +142,179 @@
             </div>
         </section>
 
-<!-- CHEST SYSTEM -->
-<section id="chest-system" hidden>
-    <h2>Treasure Chests</h2>
-    <p>Open chests to discover items and rewards!</p>
+        <!-- CHEST SYSTEM -->
+        <section id="chest-system" hidden>
+            <h2>Treasure Chests</h2>
 
-    <div id="chest-list">
-        <button type="button" disabled>Common Chest</button>
-        <button type="button" disabled>Uncommon Chest</button>
-        <button type="button" disabled>Rare Chest</button>
-        <button type="button" disabled>Legendary Chest</button>
-        <button type="button" disabled>Mythical Chest</button>
-        <button type="button" disabled>Ultra Chest</button>
-    </div>
+            <p>Open chests to discover items and rewards!</p>
 
-    <div id="chest-rewards">
-        <p>Your chest rewards will appear here.</p>
-    </div>
-</section>
+            <div id="chest-list">
+                <button type="button" id="common-chest" disabled>
+                    Common Chest
+                </button>
 
-<!-- CHEAT TERMINAL -->
-<section id="cheat-terminal" hidden>
-    <h2>Digital Cheat Terminal</h2>
+                <button type="button" id="uncommon-chest" disabled>
+                    Uncommon Chest
+                </button>
 
-<button type="button" id="open-chests">
-    Open Treasure Chests
-</button>
+                <button type="button" id="rare-chest" disabled>
+                    Rare Chest
+                </button>
 
-    <p>Enter a secret cheat code:</p>
+                <button type="button" id="legendary-chest" disabled>
+                    Legendary Chest
+                </button>
 
-    <input
-        type="text"
-        id="cheat-code-input"
-        placeholder="Enter cheat code..."
-    >
+                <button type="button" id="mythical-chest" disabled>
+                    Mythical Chest
+                </button>
 
-    <button type="button" id="submit-cheat">
-        Activate Cheat
-    </button>
+                <button type="button" id="ultra-chest" disabled>
+                    Ultra Chest
+                </button>
+            </div>
 
-    <h3>Available Cheats</h3>
+            <div id="chest-rewards">
+                <p>Your chest rewards will appear here.</p>
+            </div>
+        </section>
 
-    <div id="basic-cheats">
-        <!-- Basic cheats will appear here -->
-    </div>
+        <!-- CHEAT TERMINAL -->
+        <section id="cheat-terminal" hidden>
+            <h2>Digital Cheat Terminal</h2>
 
-    <h3>Advanced Cheats</h3>
+            <p>Enter a secret cheat code:</p>
 
-    <div id="advanced-cheats">
-        <!-- Unlockable cheats will appear here -->
-    </div>
+            <input
+                type="text"
+                id="cheat-code-input"
+                placeholder="Enter cheat code..."
+            >
 
-    <p id="cheat-message">
-        Welcome to the Digital Cheat Terminal.
-    </p>
-</section>
+            <button type="button" id="submit-cheat">
+                Activate Cheat
+            </button>
 
-<!-- DIGITAL REAPER -->
-<section id="digital-reaper" hidden>
-    <h2>THE DIGITAL REAPER</h2>
+            <h3>Available Cheats</h3>
 
-    <div id="reaper-display">
-        <h3>💀 NICE TRY.</h3>
-        <p>The Digital World is protected.</p>
-    </div>
+            <div id="basic-cheats">
+                <!-- Basic cheats will appear here -->
+            </div>
 
-    <button type="button" id="dismiss-reaper">
-        Return to Game
-    </button>
-</section>
+            <h3>Advanced Cheats</h3>
 
-        <!-- CRAFTING -->
+            <div id="advanced-cheats">
+                <!-- Unlockable cheats will appear here -->
+            </div>
+
+            <p id="cheat-message">
+                Welcome to the Digital Cheat Terminal.
+            </p>
+        </section>
+
+        <!-- DIGITAL REAPER -->
+        <section id="digital-reaper" hidden>
+            <h2>THE DIGITAL REAPER</h2>
+
+            <div id="reaper-display">
+                <h3>💀 NICE TRY.</h3>
+                <p>The Digital World is protected.</p>
+            </div>
+
+            <button type="button" id="dismiss-reaper">
+                Return to Game
+            </button>
+        </section>
+
+        <!-- CRAFTING SYSTEM -->
         <section id="crafting" hidden>
-            <h2>Crafting</h2>
+            <h2>Crafting Workshop</h2>
+
+            <p>Use collected resources to craft useful items.</p>
+
+            <div id="crafting-categories">
+                <button type="button" data-category="food">
+                    Food
+                </button>
+
+                <button type="button" data-category="healing">
+                    Healing
+                </button>
+
+                <button type="button" data-category="tools">
+                    Tools
+                </button>
+
+                <button type="button" data-category="building">
+                    Building
+                </button>
+
+                <button type="button" data-category="special">
+                    Special Items
+                </button>
+            </div>
 
             <div id="crafting-recipes">
-                <!-- Crafting recipes will appear here -->
+                <p>Your crafting recipes will appear here.</p>
+            </div>
+
+            <div id="crafting-result">
+                <p>Crafted items will appear here.</p>
+            </div>
+        </section>
+
+        <!-- BUILDING SYSTEM -->
+        <section id="building" hidden>
+            <h2>Building Workshop</h2>
+
+            <p>Construct your own shelter and base!</p>
+
+            <div id="building-blocks">
+
+                <button type="button" disabled>
+                    Wooden Floor
+                </button>
+
+                <button type="button" disabled>
+                    Stone Floor
+                </button>
+
+                <button type="button" disabled>
+                    Wooden Wall
+                </button>
+
+                <button type="button" disabled>
+                    Stone Wall
+                </button>
+
+                <button type="button" disabled>
+                    Door
+                </button>
+
+                <button type="button" disabled>
+                    Window
+                </button>
+
+                <button type="button" disabled>
+                    Roof
+                </button>
+
+                <button type="button" disabled>
+                    Stairs
+                </button>
+
+                <button type="button" disabled>
+                    Fence
+                </button>
+
+                <button type="button" disabled>
+                    Foundation
+                </button>
+
+            </div>
+
+            <div id="building-area">
+                <p>Your building area will appear here.</p>
             </div>
         </section>
 
@@ -210,11 +334,10 @@
         <p>Digimon: Digital World Survival</p>
         <p>Created as a Grade 12 browser game project.</p>
     </footer>
-<link rel="stylesheet" href="style.css">
 
-<script type="module" src="script.js"></script>
+    <!-- JAVASCRIPT -->
+    <script type="module" src="script.js"></script>
 
 </body>
 
 </html>
-
