@@ -1,5 +1,9 @@
 import { createProgressionSystem } from "./progression.js";
-
+import {
+    getDigimonAbilities,
+    getUnlockedAbilities,
+    upgradeAbility
+} from "./abilities.js";
 const digimonChoices = [
     "Agumon",
     "Gabumon",
