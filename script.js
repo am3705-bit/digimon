@@ -6,6 +6,7 @@
 
 // GAME DATA
 
+
 const digimonChoices = [
     "Agumon",
     "Gabumon",
@@ -18,8 +19,21 @@ const digimonChoices = [
     "Veemon",
     "Wormmon",
     "Hawkmon",
-    "Armadillomon"
+    "Armadillomon",
+    "Guilmon",
+    "Terriermon",
+    "Renamon",
+    "Lopmon",
+    "Impmon",
+    "Elecmon",
+    "Betamon",
+    "Dracomon",
+    "Dorumon",
+    "Kudamon",
+    "Falcomon",
+    "Monodramon"
 ];
+
 
 let player = {
     name: "",
