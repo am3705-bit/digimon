@@ -316,6 +316,18 @@ function addNavigationButton(sectionId, buttonText) {
 
 addNavigationButton("chest-system", "Return to Game");
 addNavigationButton("cheat-terminal", "Return to Game");
+addNavigationButton("crafting", "Return to Digital World");
+addNavigationButton("building", "Return to Digital World");
+
+// OPEN CRAFTING WORKSHOP
+document.getElementById("open-crafting").addEventListener("click", () => {
+    showScreen("crafting");
+});
+
+// OPEN BUILDING WORKSHOP
+document.getElementById("open-building").addEventListener("click", () => {
+    showScreen("building");
+});
 
 document.getElementById("open-chests").addEventListener("click", () => {
     showScreen("chest-system");
