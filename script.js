@@ -42,8 +42,7 @@ let player = {
     energy: 100,
     rest: 100
 };
-ensureExtraData();
-progression.ensureLevelData();
+
 // SCREEN MANAGEMENT
 
 const screens = document.querySelectorAll("main > section");
@@ -127,7 +126,8 @@ newGameButton.addEventListener("click", () => {
         energy: 100,
         rest: 100
     };
-
+  ensureExtraData();
+progression.ensureLevelData();
     showScreen("character-creation");
 });
 
