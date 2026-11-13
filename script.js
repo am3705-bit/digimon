@@ -222,8 +222,9 @@ function enterDigitalWorld() {
     abilityDisplay.updateAbilityDisplay();
     updateSurvivalStatus();
 
-    showScreen("game-world");
-    saveGame();
+   showScreen("game-world");
+createDigitalWorld();
+saveGame();
 }
 
 // SURVIVAL STATUS DISPLAY
