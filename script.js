@@ -215,9 +215,8 @@ function enterDigitalWorld() {
         return;
     }
 
-    document.getElementById("game-world")
-        .querySelector("p").textContent =
-        `Welcome, ${player.name}! Your partner is ${player.partner}. Your Digital World adventure begins!`;
+    document.getElementById("game-welcome").textContent =
+    `Welcome, ${player.name}! Your partner is ${player.partner}. Your Digital World adventure begins!`;
     progression.ensureLevelData();
     progression.updateDisplay();
     abilityDisplay.updateAbilityDisplay();
