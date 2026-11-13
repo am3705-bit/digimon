@@ -1,3 +1,4 @@
+import { createAbilityDisplay } from "./abilities-display.js";
 import { createProgressionSystem } from "./progression.js";
 import {
     getDigimonAbilities,
@@ -204,12 +205,9 @@ digimonChoices.forEach(digimon => {
         saveGame();
         enterDigitalWorld();
     });
-
     digimonList.appendChild(button);
 });
-
 // ENTER THE DIGITAL WORLD
-
 function enterDigitalWorld() {
     if (!player.partner) {
         showScreen("digimon-selection");
