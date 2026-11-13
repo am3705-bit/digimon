@@ -81,7 +81,26 @@ function loadGame() {
         return false;
     }
 }
+// CONNECT PROGRESSION AND ABILITY SYSTEMS
 
+const progression = createProgressionSystem({
+    getPlayer: () => player,
+    saveGame: () => saveGame()
+});
+
+const abilityDisplay = createAbilityDisplay(() => player);
+
+window.gameProgress = {
+    grantPlayerXP: progression.grantPlayerXP,
+    grantDigimonXP: progression.grantDigimonXP
+};
+
+window.digimonAbilitySystem = {
+    getDigimonAbilities,
+    getUnlockedAbilities,
+    upgradeAbility,
+    updateAbilityDisplay: abilityDisplay.updateAbilityDisplay
+};
 // MAIN MENU
 
 const menuButtons = document.querySelectorAll("#main-menu button");
