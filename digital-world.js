@@ -42,6 +42,12 @@ renderer.toneMappingExposure = 1.1;
         const sunlight = new THREE.DirectionalLight(0xffffff, 2);
         sunlight.position.set(-20, 35, 20);
         sunlight.castShadow = true;
+        sunlight.shadow.mapSize.set(2048, 2048);
+sunlight.shadow.camera.left = -80;
+sunlight.shadow.camera.right = 80;
+sunlight.shadow.camera.top = 80;
+sunlight.shadow.camera.bottom = -80;
+sunlight.shadow.bias = -0.0002;
         scene.add(sunlight);
 
         // GRASS TERRAIN
