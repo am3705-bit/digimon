@@ -82,6 +82,8 @@ sunlight.shadow.bias = -0.0002;
                 color: 0x159de0,
                 metalness: 0.2,
                 roughness: 0.25
+                pond.position.set(17, 0.08, -12);
+scene.add(pond);
             })
         );
 
