@@ -89,40 +89,78 @@ sunlight.shadow.bias = -0.0002;
         pond.position.set(17, 0.08, -12);
         scene.add(pond);
 
-        // TREES
-        function createTree(x, z, scale = 1) {
-            const tree = new THREE.Group();
+        
+function createTree(x, z, scale = 1) {
+    const tree = new THREE.Group();
 
-            const trunk = new THREE.Mesh(
-                new THREE.CylinderGeometry(0.35, 0.5, 3, 8),
-                new THREE.MeshStandardMaterial({ color: 0x75421e })
-            );
+    // TREE TRUNK
+    const trunk = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.3, 0.55, 4, 10),
+        new THREE.MeshStandardMaterial({
+            color: 0x68401f,
+            roughness: 1
+        })
+    );
 
-            trunk.position.y = 1.5;
-            trunk.castShadow = true;
-            tree.add(trunk);
+    trunk.position.y = 2;
+    trunk.castShadow = true;
+    trunk.receiveShadow = true;
+    tree.add(trunk);
 
-            const leaves = new THREE.Mesh(
-                new THREE.ConeGeometry(2, 5, 8),
-                new THREE.MeshStandardMaterial({ color: 0x176b35 })
-            );
+    // TREE BRANCHES
+    const branchMaterial = new THREE.MeshStandardMaterial({
+        color: 0x68401f
+    });
 
-            leaves.position.y = 5;
-            leaves.castShadow = true;
-            tree.add(leaves);
+    for (let i = 0; i < 3; i++) {
+        const branch = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.09, 0.2, 2, 7),
+            branchMaterial
+        );
 
-            tree.position.set(x, 0, z);
-            tree.scale.setScalar(scale);
-            scene.add(tree);
-        }
+        branch.position.set(
+            i % 2 === 0 ? 0.6 : -0.6,
+            2 + i * 0.65,
+            0
+        );
 
-        for (let i = 0; i < 45; i++) {
-            const side = i % 2 === 0 ? -1 : 1;
-            const x = side * (9 + Math.random() * 35);
-            const z = 35 - Math.random() * 90;
+        branch.rotation.z = i % 2 === 0 ? -0.7 : 0.7;
+        branch.castShadow = true;
+        tree.add(branch);
+    }
 
-            createTree(x, z, 0.8 + Math.random() * 0.7);
-        }
+    // FULL TREE CANOPY
+    const leafMaterial = new THREE.MeshStandardMaterial({
+        color: 0x176b35,
+        roughness: 1
+    });
+
+    const leafPositions = [
+        [0, 5, 0, 2.4],
+        [-1.1, 4.7, 0.3, 1.8],
+        [1.1, 4.8, -0.2, 1.9],
+        [0, 6, 0, 1.7],
+        [0, 4.5, 1, 1.6]
+    ];
+
+    leafPositions.forEach(([lx, ly, lz, size]) => {
+        const leaves = new THREE.Mesh(
+            new THREE.SphereGeometry(size, 12, 10),
+            leafMaterial
+        );
+
+        leaves.position.set(lx, ly, lz);
+        leaves.scale.y = 0.8;
+        leaves.castShadow = true;
+        tree.add(leaves);
+    });
+
+    tree.position.set(x, 0, z);
+    tree.scale.setScalar(scale);
+
+    scene.add(tree);
+}
+
 
         // ROCKS
         for (let i = 0; i < 25; i++) {
