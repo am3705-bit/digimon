@@ -161,6 +161,72 @@ function createTree(x, z, scale = 1) {
     scene.add(tree);
 }
 
+// GRASS PATCHES
+
+const grassMaterial = new THREE.MeshStandardMaterial({
+    color: 0x287d32,
+    roughness: 1
+});
+
+for (let i = 0; i < 180; i++) {
+    const x = (Math.random() - 0.5) * 150;
+    const z = (Math.random() - 0.5) * 150;
+
+    // Keep grass off the main path and pond
+    if (Math.abs(x) < 4) continue;
+
+    if (Math.hypot(x - 17, z + 12) < 11) continue;
+
+    const tuft = new THREE.Group();
+
+    for (let j = 0; j < 3; j++) {
+        const blade = new THREE.Mesh(
+            new THREE.ConeGeometry(0.09, 0.65, 4),
+            grassMaterial
+        );
+
+        blade.position.set(
+            (Math.random() - 0.5) * 0.35,
+            0.3,
+            (Math.random() - 0.5) * 0.35
+        );
+
+        blade.rotation.z = (Math.random() - 0.5) * 0.5;
+        tuft.add(blade);
+    }
+
+    tuft.position.set(x, 0, z);
+    scene.add(tuft);
+}
+
+// SMALL FLOWERS
+
+const flowerColors = [
+    0xffe45c,
+    0xff7db8,
+    0xffffff,
+    0x9d83ff
+];
+
+for (let i = 0; i < 45; i++) {
+    const flower = new THREE.Mesh(
+        new THREE.SphereGeometry(0.13, 8, 8),
+        new THREE.MeshStandardMaterial({
+            color: flowerColors[i % flowerColors.length],
+            emissive: flowerColors[i % flowerColors.length],
+            emissiveIntensity: 0.08
+        })
+    );
+
+    const x = (Math.random() - 0.5) * 140;
+    const z = (Math.random() - 0.5) * 140;
+
+    if (Math.abs(x) < 4) continue;
+
+    flower.position.set(x, 0.2, z);
+    scene.add(flower);
+}
+
 
         // ROCKS
         for (let i = 0; i < 25; i++) {
