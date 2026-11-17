@@ -426,7 +426,26 @@ for (let i = 0; i < 9; i++) {
         // GAME LOOP
         renderer.setAnimationLoop(() => {
             const speed = 0.13;
+// CLOUD MOVEMENT
+const elapsed = Date.now() * 0.001;
 
+clouds.forEach(cloud => {
+    cloud.position.x += 0.008;
+
+    if (cloud.position.x > 85) {
+        cloud.position.x = -85;
+    }
+});
+
+// WATER RIPPLE ANIMATION
+waterRipples.forEach((ripple, i) => {
+    const phase = (elapsed * 0.3 + i / 3) % 1;
+
+    const size = 0.5 + phase * 3;
+
+    ripple.scale.set(size, size, size);
+    ripple.material.opacity = 0.3 * (1 - phase);
+});
             if (keys["w"] || keys["arrowup"]) {
                 playerCharacter.position.z -= speed;
             }
