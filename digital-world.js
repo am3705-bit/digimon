@@ -84,7 +84,29 @@ sunlight.shadow.bias = -0.0002;
                 roughness: 0.25
                 pond.position.set(17, 0.08, -12);
 scene.add(pond);
-            })
+  // WATER RIPPLE EFFECTS
+
+const waterRipples = [];
+
+for (let i = 0; i < 3; i++) {
+    const ripple = new THREE.Mesh(
+        new THREE.RingGeometry(0.6, 0.8, 32),
+        new THREE.MeshBasicMaterial({
+            color: 0x9beaff,
+            transparent: true,
+            opacity: 0.3,
+            side: THREE.DoubleSide,
+            depthWrite: false
+        })
+    );
+
+    ripple.rotation.x = -Math.PI / 2;
+    ripple.position.set(17, 0.1 + i * 0.002, -12);
+
+    scene.add(ripple);
+    waterRipples.push(ripple);
+}
+    })
         );
 
         pond.rotation.x = -Math.PI / 2;
