@@ -228,6 +228,52 @@ for (let i = 0; i < 45; i++) {
 }
 
 
+// FLOATING CLOUDS
+
+const clouds = [];
+
+function createCloud(x, y, z, scale = 1) {
+    const cloud = new THREE.Group();
+
+    const cloudMaterial = new THREE.MeshStandardMaterial({
+        color: 0xffffff,
+        roughness: 1
+    });
+
+    const cloudParts = [
+        [0, 0, 0, 2],
+        [1.7, 0.2, 0, 1.5],
+        [-1.6, 0.1, 0, 1.4],
+        [0.5, 0.8, 0, 1.4]
+    ];
+
+    cloudParts.forEach(([cx, cy, cz, size]) => {
+        const part = new THREE.Mesh(
+            new THREE.SphereGeometry(size, 12, 10),
+            cloudMaterial
+        );
+
+        part.position.set(cx, cy, cz);
+        part.scale.y = 0.65;
+        cloud.add(part);
+    });
+
+    cloud.position.set(x, y, z);
+    cloud.scale.setScalar(scale);
+
+    scene.add(cloud);
+    clouds.push(cloud);
+}
+
+for (let i = 0; i < 9; i++) {
+    createCloud(
+        (Math.random() - 0.5) * 150,
+        22 + Math.random() * 8,
+        (Math.random() - 0.5) * 120,
+        0.8 + Math.random() * 0.7
+    );
+}
+
         // ROCKS
         for (let i = 0; i < 25; i++) {
             const rock = new THREE.Mesh(
